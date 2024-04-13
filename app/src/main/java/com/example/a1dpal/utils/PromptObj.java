@@ -3,6 +3,7 @@ package com.example.a1dpal.utils;
 
 import android.content.Context;
 
+import com.example.a1dpal.Character;
 import com.example.a1dpal.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -19,16 +20,27 @@ public class PromptObj {
         this.emotion = emotion;
 
     }
-    public static String PosCombinePrompt(String CharacterName,String emotion){
-        if (CharacterName == "Ganyu"){
-            return String.format("<lora:ganyu_ned2_offset:1> <lora:japaneseDollLikeness_v10:0.45> masterpiece, (photorealistic:1.5), best quality, beautiful lighting, real life,\n\nganyu \\(genshin impact\\), 1girl, architecture, bangs,medium breasts, bare shoulders, bell, black gloves, black pantyhose, (blue hair), blush, chinese knot, detached sleeves, east asian architecture, flower knot, gloves, horns, long hair, looking at viewer, neck bell, night, outdoors, pantyhose, purple eyes, sidelocks, solo, tassel,  white sleeves, (ulzzang-6500:0.5)\n\n, intricate, high detail, sharp focus, dramatic, beautiful girl , (RAW photo, 8k uhd, film grain), caustics, subsurface scattering, reflections, (%s :1.6), triangle face, upper body, top half body",emotion);
-        }else{
-            return "male";
+    public static String PosCombinePrompt(String CharacterName,String emotion) {
+        if (CharacterName == "Ganyu") {
+            return String.format("<lora:ganyu_ned2_offset:1> <lora:japaneseDollLikeness_v10:0.45> masterpiece, (photorealistic:1.5), best quality, beautiful lighting, real life,\n\nganyu \\(genshin impact\\), 1girl, architecture, bangs,medium breasts, bare shoulders, bell, black gloves, black pantyhose, (blue hair), blush, chinese knot, detached sleeves, east asian architecture, flower knot, gloves, horns, long hair, looking at viewer, neck bell, night, outdoors, pantyhose, purple eyes, sidelocks, solo, tassel,  white sleeves, (ulzzang-6500:0.5)\n\n, intricate, high detail, sharp focus, dramatic, beautiful girl , (RAW photo, 8k uhd, film grain), caustics, subsurface scattering, reflections, (%s :1.6), triangle face, upper body, top half body", emotion);
+        } else if (CharacterName == "Zhongli") {
+            return String.format("masterpiece, best quality,zhongli (genshin impact), male focus, jewelry, long hair, 1boy, solo, earrings, bangs, gloves, ponytail, black gloves, multicolored hair, brown hair, hair between eyes, single earring, jacket, tassel earrings, long sleeves, tassel, looking at viewer, yellow eyes,gradient hair, suit, black hair, (grey background:1.4), (%s:1.6), <lora:Korean Male Model 1.0:1.2>, 1 man, portrait, half body", emotion);
+        } else{
+            return "chickswithdicks";
         }
     }
+
     public static  String negCombinePrompt(String CharacterName,String additionalPrompts){
-        return String.format("(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, nudity, nipples, bad fingers, bad hands, full body, bad mouth, bad lips, %s, full body",additionalPrompts);
+        if (CharacterName == "Ganyu"){
+            return String.format("(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, nudity, nipples, bad fingers, bad hands, full body, bad mouth, bad lips, %s, full body",additionalPrompts);}
+        else if (CharacterName == "Zhongli"){
+            return String.format("text,username,logo,(low quality, worst quality:1.4), (bad anatomy), (inaccurate limb:1.2), bad composition, inaccurate eyes, extra digit, fewer digits, (extra arms:1.2), %s",additionalPrompts);
+        }
+        else{
+            return "";
+        }
     }
+
     public String readJsonAndModify(Context context,String ClientID) throws Exception {
 
         InputStream is = context.getResources().openRawResource(R.raw.workflow_api);
@@ -39,23 +51,36 @@ public class PromptObj {
         String jsonContent = new String(buffer, "UTF-8");
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // Example modification
+        // Prompt modification
         Map<String, Object> originalJsonMap = objectMapper.readValue(jsonContent, HashMap.class);
 
-        // Example of modifying the "inputs" section for key "15" to change positive & negative prompts
+        //modifying the "inputs" section for key "15" to change positive & negative prompts
         Map<String, Object> inputs15 = (Map<String, Object>) ((Map<String, Object>) originalJsonMap.get("15")).get("inputs");
         String posPromptString = PosCombinePrompt(this.CharacterName,this.emotion); //promptText is the variable that stores the emotion as a String
         inputs15.put("positive", posPromptString); // Directly use promptText
 
         String negPromptString = negCombinePrompt(this.CharacterName,""); //add additional negative prompts here
         inputs15.put("negative",negPromptString);
+        // modifying input and check point used for ganyu
+        if (CharacterName.equals("Ganyu")) {
+            inputs15.replace("ckpt_name","neverendingDreamNED_v122BakedVae.safetensors");
+            Map<String, Object> inputs12 = (Map<String, Object>) ((Map<String, Object>) originalJsonMap.get("12")).get("inputs");
+            inputs12.replace("lora_name_1", "JapaneseDollLikeness_v15_L.safetensors");
+            inputs12.replace("lora_name_2", "ganyu_ned2_offset.safetensors");
+        }
+        // modifying input and check point used for zhongli
+        else if (CharacterName.equals("Zhongli")){
+            inputs15.replace("ckpt_name","a7b3_v10.safetensors");
+            Map<String, Object> inputs12 = (Map<String, Object>) ((Map<String, Object>) originalJsonMap.get("12")).get("inputs");
+            inputs12.replace("lora_name_1", "zhongli.safetensors");
+            inputs12.replace("lora_name_2", "Korean Men Dolllikeness 1.0.safetensors");
+        }
 
 
         // Modifying input 16 for seed
         Map<String, Object> inputs16 = (Map<String, Object>) ((Map<String, Object>) originalJsonMap.get("16")).get("inputs");
         int newSeed = (int) (Math.random() * 10001);
         inputs16.replace("seed", newSeed);
-        // Further modifications as needed...
 
         // Wrap the modified structure under a "prompt" key
         Map<String, Object> wrappedJsonMap = new HashMap<>();

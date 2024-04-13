@@ -37,7 +37,7 @@
         android:layout_height="138dp"
         android:background="@drawable/ganyu"
         android:padding="1dp"
-        android:text="Home"
+        android:onClick="onGanyuClick"
         tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="256dp"></ImageButton>
 
@@ -56,9 +56,9 @@
         android:id="@+id/boy"
         android:layout_width="133dp"
         android:layout_height="138dp"
-        android:background="@drawable/itto"
+        android:background="@drawable/zhongli"
         android:padding="1dp"
-        android:text="Home"
+        android:onClick="onZhongLiClick"
         tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="449dp"></ImageButton>
 
@@ -66,11 +66,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/munrosmall"
-        android:text="itto"
+        android:text="Zhong Li"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="587dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Backgrounds">
+        <item>Lake</item>
+        <item>Castle</item>
+        <item>Mountain</item>
+        <item>Village</item>
+        <item>Forest</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="my_primary">#8E03C9</color>
+    <color name="my_secondary">#55A0A0A0</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">1D PAL</string>
+    <string name="gcm_defaultSenderId" translatable="false">1042155925704</string>
+    <string name="google_api_key" translatable="false">AIzaSyBJbaQjF60WAcbwaIrmEG5pr2LHqhyNlFI</string>
+    <string name="google_app_id" translatable="false">1:1042155925704:android:6f9ef389bf8237b318b5fd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBJbaQjF60WAcbwaIrmEG5pr2LHqhyNlFI</string>
+    <string name="google_storage_bucket" translatable="false">login-register-firebase-426fd.appspot.com</string>
+    <string name="project_id" translatable="false">login-register-firebase-426fd</string>
+    <style name="Base.Theme._1DPAL" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme._1DPAL" parent="Base.Theme._1DPAL"/>
+</resources>

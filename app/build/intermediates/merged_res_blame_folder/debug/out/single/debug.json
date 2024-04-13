@@ -1,0 +1,178 @@
+[
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_village.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\village.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_lake.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\lake.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_zhongli.png.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\zhongli.png"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_hearts.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\hearts.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_itto.png.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\itto.png"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_rounded_corner.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\rounded_corner.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_castle.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\castle.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_activity_cover.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\activity_cover.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_recyclerview.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\recyclerview.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\font_font.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\font\\font.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_forest.png.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\forest.png"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\font_munrosmall.ttf.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\font\\munrosmall.ttf"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_mountain.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\mountain.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_background3.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\background3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_npc1.png.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\npc1.png"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_heart.png.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\heart.png"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\raw_workflow_api.json.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\raw\\workflow_api.json"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_ganyu.png.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\ganyu.png"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_activity_character.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\activity_character.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_done_icon.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\done_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_background.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\background.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\drawable_background2.jpg.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\drawable\\background2.jpg"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\font_arcadeclassic.TTF.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\font\\arcadeclassic.TTF"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-merged_res-36:\\layout_activity_npc.xml.flat",
+        "source": "C:\\Users\\sngam\\.gradle\\daemon\\8.2\\com.example.a1dpal.app-main-38:\\layout\\activity_npc.xml"
+    },
+    {
+        "merged": "com.example.a1dpal.app-merged_res-36:/layout_activity_character.xml.flat",
+        "source": "com.example.a1dpal.app-main-38:/layout/activity_character.xml"
+    }
+]

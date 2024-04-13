@@ -21,13 +21,13 @@ public class PromptObj {
     }
     public static String PosCombinePrompt(String CharacterName,String emotion){
         if (CharacterName == "Ganyu"){
-            return String.format("<lora:ganyu_ned2_offset:1> <lora:japaneseDollLikeness_v10:0.45> masterpiece, (photorealistic:1.5), best quality, beautiful lighting, real life,\n\nganyu \\(genshin impact\\), 1girl, architecture, bangs,medium breasts, bare shoulders, bell, black gloves, black pantyhose, (blue hair), blush, chinese knot, detached sleeves, east asian architecture, flower knot, gloves, horns, long hair, looking at viewer, neck bell, night, outdoors, pantyhose, purple eyes, sidelocks, solo, tassel,  white sleeves, (ulzzang-6500:0.5)\n\n, intricate, high detail, sharp focus, dramatic, beautiful girl , (RAW photo, 8k uhd, film grain), caustics, subsurface scattering, reflections, (%s :1.6), triangle face",emotion);
+            return String.format("<lora:ganyu_ned2_offset:1> <lora:japaneseDollLikeness_v10:0.45> masterpiece, (photorealistic:1.5), best quality, beautiful lighting, real life,\n\nganyu \\(genshin impact\\), 1girl, architecture, bangs,medium breasts, bare shoulders, bell, black gloves, black pantyhose, (blue hair), blush, chinese knot, detached sleeves, east asian architecture, flower knot, gloves, horns, long hair, looking at viewer, neck bell, night, outdoors, pantyhose, purple eyes, sidelocks, solo, tassel,  white sleeves, (ulzzang-6500:0.5)\n\n, intricate, high detail, sharp focus, dramatic, beautiful girl , (RAW photo, 8k uhd, film grain), caustics, subsurface scattering, reflections, (%s :1.6), triangle face, upper body, top half body",emotion);
         }else{
             return "male";
         }
     }
     public static  String negCombinePrompt(String CharacterName,String additionalPrompts){
-        return String.format("(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, nudity, nipples, bad fingers, bad hands, full body, bad mouth, bad lips, %s",additionalPrompts);
+        return String.format("(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, nudity, nipples, bad fingers, bad hands, full body, bad mouth, bad lips, %s, full body",additionalPrompts);
     }
     public String readJsonAndModify(Context context,String ClientID) throws Exception {
 

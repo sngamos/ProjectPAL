@@ -13,7 +13,7 @@ import okhttp3.Response;
 
 public class GPTRequest {
     //INSERT API KEY BELOW
-    private static final String API_key = "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";
+    private static final String API_key = "fill here";
     //URL to prompt gpt (change if you want to use another model/ if openAI changes their endpoint
     private static final String Endpoint_URL = "https://api.openai.com/v1/chat/completions";
     //Model to use

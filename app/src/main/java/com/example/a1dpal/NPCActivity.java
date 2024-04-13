@@ -90,7 +90,7 @@ public class NPCActivity extends AppCompatActivity {
                     //Request to Stable Diffusion
                     if (webSocket != null && !userInput.isEmpty()) {
                         try {
-                            String PromptID = sendInputToServer(userInput);
+                            String PromptID = sendInputToServer(saveFile.getEmotion());
                             Log.d("prompt id",PromptID);
                             promptId = PromptID;
                         } catch (Exception e) {

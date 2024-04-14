@@ -42,8 +42,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="Submit"
+        android:fontFamily="@font/arcadeclassic"
         app:layout_constraintBottom_toBottomOf="@id/inputBox"
         app:layout_constraintEnd_toEndOf="parent" />
+
 
     <ImageView
         android:id="@+id/npcAvatar"
@@ -59,8 +61,8 @@
 
     <TextView
         android:id="@+id/responseView"
-        android:layout_width="405dp"
-        android:layout_height="72dp"
+        android:layout_width="556dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_corner"
         android:clickable="false"
@@ -70,7 +72,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/npcAvatar"
-        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.73" />

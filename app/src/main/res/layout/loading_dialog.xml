@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/rounded_corner"> <!-- This drawable should be a shape with rounded corners -->
+
+    <!-- Replace with your actual GIF drawable -->
+
+    <ImageView
+        android:id="@+id/loadingImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/loading" />
+
+    <TextView
+        android:id="@+id/loadingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadingImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Loading..."
+        android:fontFamily="@font/arcadeclassic"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

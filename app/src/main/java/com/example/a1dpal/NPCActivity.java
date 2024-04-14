@@ -46,12 +46,14 @@ public class NPCActivity extends AppCompatActivity {
     Button btnBack;
     EditText promptBox;
     ImageView imageView;
+
     private OkHttpClient client = new OkHttpClient();
     private WebSocket webSocket;
     private String serverAddress = "https://legal-picked-primate.ngrok-free.app";
     private String websocketAddress = serverAddress.replace("https://", "wss://");
     private String clientId = UUID.randomUUID().toString();
     private String promptId;
+    private LoadingWidget loadingWidget;
 
 
     @Override
@@ -59,8 +61,11 @@ public class NPCActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_npc);
-
         Bundle extras = getIntent().getExtras();
+
+        //create loading widget
+        loadingWidget = new LoadingWidget(this);
+
         if (extras != null) {
             String value = extras.getString("image");
             if (value != null) {
@@ -77,17 +82,32 @@ public class NPCActivity extends AppCompatActivity {
                 startActivity(new Intent(NPCActivity.this, MainActivity.class));
             }
         });
-
-        imageView = findViewById(R.id.npcAvatar);
-        btnSubmit= findViewById(R.id.submitButton);
-        promptBox = findViewById(R.id.inputBox);
-        connectWebSocket();
+        //getting the character chosen
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String charChoice = sharedPreferences.getString("CharChosen","defaultString");
+        //creating story state
         storyState saveFile = new storyState(charChoice, "","");
+        saveFile.setStory(String.format("You wake up and see %s standing mysteriously infront of you, seemingly in deep thought.",charChoice));
+        TextView responseTextView = findViewById(R.id.responseView);
+        responseTextView.setText(saveFile.getStory());
+        responseTextView.setVisibility(View.VISIBLE);
+        imageView = findViewById(R.id.npcAvatar);
+        //chosing the avatar based on character choice
+        if (charChoice.equals("Ganyu")) {
+            imageView.setImageResource(R.drawable.ganyu_start);
+        }
+        else if (charChoice.equals("Zhongli")){
+            imageView.setImageResource(R.drawable.zhongli_start);
+        }
+
+
+        btnSubmit= findViewById(R.id.submitButton);
+        promptBox = findViewById(R.id.inputBox);
+        connectWebSocket(saveFile);
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadingWidget.start();
                 try {
                     String userInput = promptBox.getText().toString();
                     TextView responseTextView = findViewById(R.id.responseView);
@@ -120,25 +140,14 @@ public class NPCActivity extends AppCompatActivity {
                                     }
                                 }
                             } catch (JSONException e) {
+                                loadingWidget.end();
                                 throw new RuntimeException(e);
                             }
-                            responseTextView.setText(saveFile.getStory());
-                            responseTextView.setVisibility(View.VISIBLE);
-                            new CountDownTimer(15000, 1000) {
-                                @Override
-                                public void onTick(long millisUntilFinished) {
-                                }
-
-                                @Override
-                                public void onFinish() {
-                                    responseTextView.setText("");
-                                    responseTextView.setVisibility(View.INVISIBLE);
-                                }
-                            }.start();
                         }
 
                         @Override
                         public void onFailure(String error) {
+                            loadingWidget.end();
                             responseTextView.setText(error);
                             responseTextView.setVisibility(View.VISIBLE);
                             new CountDownTimer(5000, 1000) {
@@ -165,7 +174,7 @@ public class NPCActivity extends AppCompatActivity {
         });
     }
 
-    private void connectWebSocket() {
+    private void connectWebSocket(storyState saveFile) {
         Request request = new Request.Builder().url(websocketAddress + "/ws?clientId=" + clientId).build();
         webSocket = client.newWebSocket(request, new WebSocketListener() {
             @Override
@@ -188,7 +197,7 @@ public class NPCActivity extends AppCompatActivity {
                         // Check if execution is complete
                         if (nodeIsNull && promptId.equals(receivedPromptId)) {
                             Log.d("WebSocket", "Execution done for prompt ID: " + promptId);
-                            handleImageFetching(promptId);
+                            handleImageFetching(promptId,saveFile);
 
                         }
                     }
@@ -228,19 +237,24 @@ public class NPCActivity extends AppCompatActivity {
         Log.d("WebSocket", "Sending : " + userInput);
         return future.get();
     }
-    private void handleImageFetching(String promptId) {
+    private void handleImageFetching(String promptId,storyState saveFile) {
         // Assuming 'this' is a Context (e.g., Activity)
         ImageFetcher imageFetcher = new ImageFetcher(this, this.serverAddress);
 
         imageFetcher.fetchImages(promptId, new ImageFetcher.ImageFetchListener() {
             @Override
             public void onImageSaved(String imagePath) {
+                TextView responseTextView = findViewById(R.id.responseView);
                 // This callback will be on a background thread. To update the UI, switch to the main thread.
                 runOnUiThread(() -> {
                     // Display the image in imageView
+                    loadingWidget.end();
                     Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
                     imageView.setImageBitmap(bitmap);
+                    responseTextView.setText(saveFile.getStory());
+                    responseTextView.setVisibility(View.VISIBLE);
                 });
+
             }
 
             @Override

@@ -31,7 +31,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.github.bumptech.glide:glide:4.14.2")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
     implementation("io.ktor:ktor-client-android:1.6.4")
     implementation("io.ktor:ktor-client-websockets:1.6.4")

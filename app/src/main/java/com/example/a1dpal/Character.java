@@ -3,7 +3,9 @@ package com.example.a1dpal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -30,14 +32,21 @@ public class Character extends AppCompatActivity {
 
     }
     public void onGanyuClick(View view){
+        //using sharedpreferences to see share chosen character
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("CharChosen", "Ganyu");
+        editor.apply();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.putExtra("CharChosen", "Ganyu");
         startActivity(intent);
         finish();
     }
     public void onZhongliClick(View view){
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("CharChosen", "Zhongli");
+        editor.apply();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.putExtra("CharChosen", "Zhongli");
         startActivity(intent);
         finish();
     }

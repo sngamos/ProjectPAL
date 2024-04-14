@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -80,26 +82,15 @@ public class NPCActivity extends AppCompatActivity {
         btnSubmit= findViewById(R.id.submitButton);
         promptBox = findViewById(R.id.inputBox);
         connectWebSocket();
-        storyState saveFile = new storyState("", "");
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String charChoice = sharedPreferences.getString("CharChosen","defaultString");
+        storyState saveFile = new storyState(charChoice, "","");
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
                     String userInput = promptBox.getText().toString();
-
-                    //Request to Stable Diffusion
-                    if (webSocket != null && !userInput.isEmpty()) {
-                        try {
-                            String PromptID = sendInputToServer(saveFile.getEmotion());
-                            Log.d("prompt id",PromptID);
-                            promptId = PromptID;
-                        } catch (Exception e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-
                     TextView responseTextView = findViewById(R.id.responseView);
-                    Log.i("saved summary", saveFile.getSummary());
                     new GPTRequest().sendGPTRequest(saveFile.inputWrapper(userInput), new GPTRequest.ResponseCallback() {
                         @Override
                         public void onResponse(String response) {
@@ -107,7 +98,7 @@ public class NPCActivity extends AppCompatActivity {
                             try {
                                 JSONObject json = new JSONObject(response);
                                 String json_story = json.getString("story");
-                                String json_emotion = json.getString("ganyu_emotion");
+                                String json_emotion = json.getString("character_emotion");
                                 String json_summary = json.getString("summary");
                                 Log.i("gpt output" ,json_story + json_emotion + json_summary);
                                 Log.i("summary" , json_summary);
@@ -115,12 +106,25 @@ public class NPCActivity extends AppCompatActivity {
                                 saveFile.setSummary(json_summary);
                                 saveFile.setStory(json_story);
                                 Log.i("saveState", saveFile.getEmotion() + saveFile.getSummary());
+                                //get emotion from save file
+                                String emotion = saveFile.getEmotion();
+                                //send request to Stable Diffusion
+                                if (webSocket != null && !emotion.isEmpty()) {
+                                    try {
+                                        String PromptID = sendInputToServer(emotion);
+                                        Log.e("emotion sent to sd",emotion);
+                                        //Log.d("prompt id",PromptID);
+                                        promptId = PromptID;
+                                    } catch (Exception e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
                             } catch (JSONException e) {
                                 throw new RuntimeException(e);
                             }
                             responseTextView.setText(saveFile.getStory());
                             responseTextView.setVisibility(View.VISIBLE);
-                            new CountDownTimer(10000, 1000) {
+                            new CountDownTimer(15000, 1000) {
                                 @Override
                                 public void onTick(long millisUntilFinished) {
                                 }
@@ -153,6 +157,9 @@ public class NPCActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     System.out.println(e);
                 }
+
+                Log.i("saved summary", saveFile.getSummary());
+
 
             }
         });
@@ -196,8 +203,15 @@ public class NPCActivity extends AppCompatActivity {
     }
 
     private String sendInputToServer(String userInput) throws Exception {
+        //get character chosen name
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        String charChoice = sharedPreferences.getString("CharChosen","defaultString");
+        if (charChoice.equals("defaultString")){
+            Log.e("fail","failed cos null");
+        }
+        Log.d("char chosen",charChoice);
         // Prepare your prompt as a JSON string
-        PromptObj promptobj = new PromptObj("Ganyu",userInput);
+        PromptObj promptobj = new PromptObj(charChoice,userInput);
         String prompt = promptobj.readJsonAndModify(this, clientId);
         Log.d("prompt",prompt);
         //Log.d("websocket prompt",promptJson);

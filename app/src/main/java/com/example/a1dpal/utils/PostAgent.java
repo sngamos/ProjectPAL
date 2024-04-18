@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class PostAgent {
-    private static final String SERVER_ADDRESS = "legal-picked-primate.ngrok-free.app";
+    private static final String SERVER_ADDRESS = "insert your own stable diffusion ComfyUI API domain address here";
     public static String sendPostRequest(String payload) throws Exception {
         URL url = new URL("https://" + SERVER_ADDRESS + "/prompt" );
         HttpURLConnection con = (HttpURLConnection) url.openConnection();

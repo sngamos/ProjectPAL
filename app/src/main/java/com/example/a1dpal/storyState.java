@@ -46,7 +46,7 @@ public class storyState {
         /*String output = "Write a short continuation of a story about going on a date with Ganyu. The story so far: " + this.summary +
                 "The user's action is: " + input + " output in json string format ONLY, with keys 'story': story, and 'ganyu_emotion': ganyu's emotion in one word, and 'summary': a short summary of the story so far\n";
         */
-        String output = String.format("Write %s's response to my action in short, the response should contain both action and spoken reply ",this.charChosen) + "the story so far: " + this.summary + "my action is: " +
+        String output = String.format("Write %s's response to my action in short, the response should contain both action and spoken reply and my name is traveller ",this.charChosen) + "the story so far: " + this.summary + "my action is: " +
                 input + " output in json string format ONLY, with keys" + String.format(" 'story':<%s's response here>",this.charChosen)+ String.format(" and 'character_emotion': <%s's emotion in one word>, and 'summary': <summarise the story so far>",this.charChosen);
         return output;
     };

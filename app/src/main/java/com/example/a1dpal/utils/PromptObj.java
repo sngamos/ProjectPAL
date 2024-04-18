@@ -22,7 +22,7 @@ public class PromptObj {
     }
     public static String PosCombinePrompt(String CharacterName,String emotion) {
         if (CharacterName.equals("Ganyu")) {
-            return String.format("<lora:ganyu_ned2_offset:1> <lora:japaneseDollLikeness_v10:0.45> masterpiece, (photorealistic:1.5), best quality, beautiful lighting, real life,\n\nganyu \\(genshin impact\\), 1girl, architecture, bangs,medium breasts, bare shoulders, bell, black gloves, black pantyhose, (blue hair), blush, chinese knot, detached sleeves, east asian architecture, flower knot, gloves, horns, long hair, looking at viewer, neck bell, night, outdoors, pantyhose, purple eyes, sidelocks, solo, tassel,  white sleeves, (ulzzang-6500:0.5)\n\n, intricate, high detail, sharp focus, dramatic, beautiful girl , (RAW photo, 8k uhd, film grain), caustics, subsurface scattering, reflections, (%s :1.6), triangle face, upper body, top half body", emotion);
+            return String.format("<lora:ganyu_ned2_offset:1> <lora:japaneseDollLikeness_v10:0.45> masterpiece, (photorealistic:1.5), best quality, beautiful lighting, real life,\n\nganyu \\(genshin impact\\), 1girl, architecture, bangs,medium breasts, bare shoulders, bell, black gloves, black pantyhose, (blue hair), blush, chinese knot, detached sleeves, east asian architecture, flower knot, gloves, horns, long hair, looking at viewer, neck bell, night, outdoors, pantyhose, purple eyes, sidelocks, solo, tassel,  white sleeves, (ulzzang-6500:0.5)\n\n, intricate, high detail, sharp focus, dramatic, beautiful girl , (RAW photo, 8k uhd, film grain), caustics, subsurface scattering, reflections, (%s :1.6), triangle face, upper body", emotion);
         } else if (CharacterName.equals("Zhongli")) {
             return String.format("masterpiece, best quality,zhongli (genshin impact), male focus, jewelry, long hair, 1boy, solo, earrings, bangs, gloves, ponytail, black gloves, multicolored hair, brown hair, hair between eyes, single earring, jacket, tassel earrings, long sleeves, tassel, looking at viewer, yellow eyes,gradient hair, suit, black hair, (grey background:1.4), (%s:1.6), <lora:Korean Male Model 1.0:1.2>, 1 man, portrait, half body", emotion);
         } else{
@@ -31,10 +31,10 @@ public class PromptObj {
     }
 
     public static  String negCombinePrompt(String CharacterName,String additionalPrompts){
-        if (CharacterName == "Ganyu"){
-            return String.format("(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, nudity, nipples, bad fingers, bad hands, full body, bad mouth, bad lips, %s, full body",additionalPrompts);}
-        else if (CharacterName == "Zhongli"){
-            return String.format("text,username,logo,(low quality, worst quality:1.4), (bad anatomy), (inaccurate limb:1.2), bad composition, inaccurate eyes, extra digit, fewer digits, (extra arms:1.2), %s",additionalPrompts);
+        if (CharacterName.equals("Ganyu")){
+            return String.format("(painting by bad-artist-anime:0.9), (painting by bad-artist:0.9), watermark, text, error, blurry, jpeg artifacts, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, artist name, (worst quality, low quality:1.4), bad anatomy, nudity, nipples, bad fingers, bad hands, full body, bad mouth, bad lips, %s, knees",additionalPrompts);}
+        else if (CharacterName.equals("Zhongli")){
+            return String.format("text,username,logo,(low quality, worst quality:1.4), (bad anatomy), (inaccurate limb:1.2), bad composition, inaccurate eyes, extra digit, fewer digits, (extra arms:1.2),knees, %s",additionalPrompts);
         }
         else{
             return "";

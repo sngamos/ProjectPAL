@@ -10,5 +10,5 @@ Our app utilises ComfyUI, either setup your own ComfyUI server on your own hardw
 <br>
 Please paste the ComfyUI API domain address in the "PostAgent" class file.<br>
 <br>
-Link and guide to download and setup stable diffusion and ComfyUI:
+Link and guide to download and setup stable diffusion and ComfyUI:<br>
 https://github.com/comfyanonymous/ComfyUI
